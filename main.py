@@ -17,7 +17,7 @@ slash = SlashCommand(bot, sync_commands=True)
 
 bot.remove_command('help')
 
-for filename in os.listdir('./cogs'): #this better work
+for filename in os.listdir('cogs'):
     if filename.endswith('.py'):
         try:
             bot.load_extension(f"cogs.{filename[:-3]}")
