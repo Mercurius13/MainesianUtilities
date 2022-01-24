@@ -21,7 +21,7 @@ for filename in os.listdir('MainesianBot/cogs'):
     if filename.endswith('.py'):
         try:
             print(filename[:-3])
-            bot.load_extension(f"cogs.{filename[:-3]}")
+            bot.load_extension(f"{filename[:-3]}")
 
         except commands.ExtensionError as e:
             print(f'{e.__class__.__name__}: {e}')
