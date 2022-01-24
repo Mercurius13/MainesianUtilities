@@ -20,7 +20,7 @@ bot.remove_command('help')
 for filename in os.listdir('cogs'):
     if filename.endswith('.py'):
         try:
-            bot.load_extension(f"cogs/{filename[:-3]}")
+            bot.load_extension(f"cogs.{filename[:-3]}")
 
         except commands.ExtensionError as e:
             print(f'{e.__class__.__name__}: {e}')
@@ -57,7 +57,7 @@ async def load(ctx, *, module):
             author = "Mr Zero"
 
         try:
-            bot.load_extension(f"cogs/{module}")
+            bot.load_extension(f"cogs.{module}")
         except commands.ExtensionError as e:
             await ctx.send(embed=nextcord.Embed(
                 title=
@@ -90,7 +90,7 @@ async def unload(ctx, *, module):
             author = "Mr Zero"
 
         try:
-            bot.unload_extension(f"cogs/{module}")
+            bot.unload_extension(f"cogs.{module}")
         except commands.ExtensionError as e:
             await ctx.send(embed=nextcord.Embed(
                 title=
@@ -123,7 +123,7 @@ async def reload(ctx, *, module):
             author = "Mr Zero"
 
         try:
-            bot.reload_extension(f"cogs/{module}")
+            bot.reload_extension(f"cogs.{module}")
         except commands.ExtensionError as e:
             await ctx.send(embed=nextcord.Embed(
                 title=
@@ -154,7 +154,7 @@ async def massreload(ctx):
                 await ctx.send(f"Reloading {filename[:-3]}")
                 await asyncio.sleep(1)
                 try:
-                    bot.reload_extension(f"cogs{filename[:-3]}")
+                    bot.reload_extension(f"cogs.{filename[:-3]}")
                     await ctx.send(
                         f"Done Reloading {filename[:-3]}, now moving on to the next one"
                     )
@@ -188,7 +188,7 @@ async def massunload(ctx):
                 await ctx.send(f"Unloading {filename[:-3]}")
                 await asyncio.sleep(1)
                 try:
-                    bot.unload_extension(f"cogs{filename[:-3]}")
+                    bot.unload_extension(f"cogs.{filename[:-3]}")
                     await ctx.send(
                         f"Done Unloading {filename[:-3]}, now moving on to the next one"
                     )
@@ -215,7 +215,7 @@ async def massload(ctx):
                 await ctx.send(f"Loading {filename[:-3]}")
                 await asyncio.sleep(1)
                 try:
-                    bot.load_extension(f"cogs{filename[:-3]}")
+                    bot.load_extension(f"cogs.{filename[:-3]}")
                     await ctx.send(
                         f"Done Loading {filename[:-3]}, now moving on to the next one"
                     )
@@ -256,10 +256,10 @@ async def checkcog(ctx):
 
         for i in all_cogs:
             try:
-                bot.load_extension(f"cogs/{i}")
+                bot.load_extension(f"cogs.{i}")
                 await ctx.send(f"{i} wasn't loaded")
                 await asyncio.sleep(1)
-                bot.unload_extension(f"cogs/{i}")
+                bot.unload_extension(f"cogs.{i}")
             except commands.ExtensionAlreadyLoaded:
                 loaded_cogs.append(i)
 
