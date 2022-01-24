@@ -2,3 +2,4 @@ nextcord
 tinydb
 python-dotenv
 flask
+https://code-with-me.jetbrains.com/nSboD-zkWrSFVHgcx9sGrw#p=PC&fp=4F55A405BAA8E73A03AF4215ED50EB3AF107FAF1A8D6073118C1228F0F6117FD
