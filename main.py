@@ -20,6 +20,7 @@ bot.remove_command('help')
 for filename in os.listdir('MainesianBot/cogs'):
     if filename.endswith('.py'):
         try:
+            print(filename)
             bot.load_extension(f"cogs/{filename}")
 
         except commands.ExtensionError as e:
