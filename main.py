@@ -20,8 +20,7 @@ bot.remove_command('help')
 for filename in os.listdir('MainesianBot/cogs'):
     if filename.endswith('.py'):
         try:
-            print(filename)
-            bot.load_extension(f"cogs/{filename}")
+            bot.load_extension(f"cogs/{filename[:-3]}")
 
         except commands.ExtensionError as e:
             print(f'{e.__class__.__name__}: {e}')
@@ -152,12 +151,12 @@ async def massreload(ctx):
 
         for filename in os.listdir('cogs'):
             if filename.endswith('.py'):
-                await ctx.send(f"Reloading {filename}")
+                await ctx.send(f"Reloading {filename[:-3]}")
                 await asyncio.sleep(1)
                 try:
-                    bot.reload_extension(f"cogs/{filename}")
+                    bot.reload_extension(f"cogs/{filename[:-3]}")
                     await ctx.send(
-                        f"Done Reloading {filename}, now moving on to the next one"
+                        f"Done Reloading {filename[:-3]}, now moving on to the next one"
                     )
 
                 except commands.ExtensionError as e:
@@ -186,12 +185,12 @@ async def massunload(ctx):
 
         for filename in os.listdir('cogs'):
             if filename.endswith('.py'):
-                await ctx.send(f"Unloading {filename}")
+                await ctx.send(f"Unloading {filename[:-3]}")
                 await asyncio.sleep(1)
                 try:
-                    bot.unload_extension(f"cogs/{filename}")
+                    bot.unload_extension(f"cogs/{filename[:-3]}")
                     await ctx.send(
-                        f"Done Unloading {filename}, now moving on to the next one"
+                        f"Done Unloading {filename[:-3]}, now moving on to the next one"
                     )
 
                 except commands.ExtensionError as e:
@@ -213,12 +212,12 @@ async def massload(ctx):
 
         for filename in os.listdir('cogs'):
             if filename.endswith('.py'):
-                await ctx.send(f"Loading {filename}")
+                await ctx.send(f"Loading {filename[:-3]}")
                 await asyncio.sleep(1)
                 try:
-                    bot.load_extension(f"cogs/{filename}")
+                    bot.load_extension(f"cogs/{filename[:-3]}")
                     await ctx.send(
-                        f"Done Loading {filename}, now moving on to the next one"
+                        f"Done Loading {filename[:-3]}, now moving on to the next one"
                     )
 
                 except commands.ExtensionError as e:
