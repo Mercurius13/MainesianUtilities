@@ -17,7 +17,7 @@ slash = SlashCommand(bot, sync_commands=True)
 
 bot.remove_command('help')
 
-for filename in os.listdir('MainesianBot/cogs'):
+for filename in os.listdir('cogs'):
     if filename.endswith('.py'):
         try:
             bot.load_extension(f"cogs/{filename[:-3]}")
@@ -149,12 +149,12 @@ async def reload(ctx, *, module):
 async def massreload(ctx):
     if ctx.author.id == 815555652780294175 or ctx.author.id == 723032217504186389:
 
-        for filename in os.listdir('MainesianBot/cogs'):
+        for filename in os.listdir('cogs'):
             if filename.endswith('.py'):
                 await ctx.send(f"Reloading {filename[:-3]}")
                 await asyncio.sleep(1)
                 try:
-                    bot.reload_extension(f"MainesianBot/cogs{filename[:-3]}")
+                    bot.reload_extension(f"cogs{filename[:-3]}")
                     await ctx.send(
                         f"Done Reloading {filename[:-3]}, now moving on to the next one"
                     )
@@ -183,12 +183,12 @@ async def massunload(ctx):
         elif ctx.author.id == 723032217504186389:
             author = "Mr Zero"
 
-        for filename in os.listdir('MainesianBot/cogs'):
+        for filename in os.listdir('cogs'):
             if filename.endswith('.py'):
                 await ctx.send(f"Unloading {filename[:-3]}")
                 await asyncio.sleep(1)
                 try:
-                    bot.unload_extension(f"MainesianBot/cogs{filename[:-3]}")
+                    bot.unload_extension(f"cogs{filename[:-3]}")
                     await ctx.send(
                         f"Done Unloading {filename[:-3]}, now moving on to the next one"
                     )
@@ -210,12 +210,12 @@ async def massload(ctx):
         elif ctx.author.id == 723032217504186389:
             author = "Mr Zero"
 
-        for filename in os.listdir('MainesianBot/cogs'):
+        for filename in os.listdir('cogs'):
             if filename.endswith('.py'):
                 await ctx.send(f"Loading {filename[:-3]}")
                 await asyncio.sleep(1)
                 try:
-                    bot.load_extension(f"MainesianBot/cogs{filename[:-3]}")
+                    bot.load_extension(f"cogs{filename[:-3]}")
                     await ctx.send(
                         f"Done Loading {filename[:-3]}, now moving on to the next one"
                     )
@@ -246,7 +246,7 @@ async def checkcog(ctx):
 
         all_cogs = []
         loaded_cogs = []
-        for filename in os.listdir('MainesianBot/cogs'):
+        for filename in os.listdir('cogs'):
 
             if filename.endswith('.py'):
                 print(filename[:-3])
