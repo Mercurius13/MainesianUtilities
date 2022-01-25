@@ -18,7 +18,7 @@ slash = SlashCommand(bot, sync_commands=True)
 
 bot.remove_command('help')
 
-for filename in os.listdir('MainesianBot/cogs'):
+for filename in os.listdir('cogs'):
     if filename.endswith('.py'):
         try:
             bot.load_extension(f"cogs.{filename[:-3]}")
@@ -58,7 +58,7 @@ async def load(ctx, *, module):
             author = "Mr Zero"
 
         try:
-            bot.load_extension(f"cogs.{module}.py")
+            bot.load_extension(f"cogs.{module}")
         except commands.ExtensionError as e:
             await ctx.send(embed=nextcord.Embed(
                 title=
