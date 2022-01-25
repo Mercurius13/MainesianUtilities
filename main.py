@@ -57,7 +57,7 @@ async def load(ctx, *, module):
             author = "Mr Zero"
 
         try:
-            bot.load_extension(f"cogs/{module}")
+            bot.load_extension(f"cogs/{module}.py")
         except commands.ExtensionError as e:
             await ctx.send(embed=nextcord.Embed(
                 title=
