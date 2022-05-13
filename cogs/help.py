@@ -97,7 +97,7 @@ class Help(commands.Cog):
             buttons = [
                 create_button(style=ButtonStyle.blue, custom_id="big_back", emoji="⏪",
                               disabled=True),
-                create_button(style=ButtonStyle.blue, custom_id="back", emoji=":arrow_backward:",
+                create_button(style=ButtonStyle.blue, custom_id="back", emoji="◀",
                               disabled=True),
                 create_button(style=ButtonStyle.blue, custom_id="forward", emoji="▶",
                               disabled=False),
@@ -728,3 +728,4 @@ class Help(commands.Cog):
 
 def setup(bot):
     bot.add_cog(Help(bot))
+
