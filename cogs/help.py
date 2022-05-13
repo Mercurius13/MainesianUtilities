@@ -8,17 +8,6 @@ from discord_slash.utils.manage_components import create_button, create_actionro
 from discord_slash.utils.manage_components import wait_for_component
 from discord_slash.context import ComponentContext
 
-rightbuttonemoji = {
-    'id': 928501426055950337,
-    'name': 'forward'
-}
-
-leftbuttonemoji = {
-    'id': 928501266785632266,
-    'name': "back1"
-}
-
-
 class Help(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
@@ -107,9 +96,9 @@ class Help(commands.Cog):
             buttons = [
                 create_button(style=ButtonStyle.blue, custom_id="big_back", emoji="⏪",
                               disabled=True),
-                create_button(style=ButtonStyle.blue, custom_id="back", emoji=leftbuttonemoji,
+                create_button(style=ButtonStyle.blue, custom_id="back", emoji=":arrow_backward:",
                               disabled=True),
-                create_button(style=ButtonStyle.blue, custom_id="forward", emoji=rightbuttonemoji,
+                create_button(style=ButtonStyle.blue, custom_id="forward", emoji=":arrow_right:",
                               disabled=False),
                 create_button(style=ButtonStyle.blue, custom_id="big_forward", emoji="⏩",
                               disabled=False),
@@ -144,9 +133,9 @@ class Help(commands.Cog):
                             buttons_left_disabled = [
                                 create_button(style=ButtonStyle.blue, custom_id="big_back", emoji="⏪",
                                               disabled=True),
-                                create_button(style=ButtonStyle.blue, custom_id="back", emoji=leftbuttonemoji,
+                                create_button(style=ButtonStyle.blue, custom_id="back", emoji=":arrow_left:",
                                               disabled=True),
-                                create_button(style=ButtonStyle.blue, custom_id="forward", emoji=rightbuttonemoji,
+                                create_button(style=ButtonStyle.blue, custom_id="forward", emoji=":arrow_right:",
                                               disabled=False),
                                 create_button(style=ButtonStyle.blue, custom_id="big_forward", emoji="⏩",
                                               disabled=False),
@@ -161,9 +150,9 @@ class Help(commands.Cog):
                             buttons_normal = [
                                 create_button(style=ButtonStyle.blue, custom_id="big_back", emoji="⏪",
                                               disabled=False),
-                                create_button(style=ButtonStyle.blue, custom_id="back", emoji=leftbuttonemoji,
+                                create_button(style=ButtonStyle.blue, custom_id="back", emoji=":arrow_left:",
                                               disabled=False),
-                                create_button(style=ButtonStyle.blue, custom_id="forward", emoji=rightbuttonemoji,
+                                create_button(style=ButtonStyle.blue, custom_id="forward", emoji=":arrow_right:",
                                               disabled=False),
                                 create_button(style=ButtonStyle.blue, custom_id="big_forward", emoji="⏩",
                                               disabled=False),
@@ -178,9 +167,9 @@ class Help(commands.Cog):
                             buttons_right_disabled = [
                                 create_button(style=ButtonStyle.blue, custom_id="big_back", emoji="⏪",
                                               disabled=False),
-                                create_button(style=ButtonStyle.blue, custom_id="back", emoji=leftbuttonemoji,
+                                create_button(style=ButtonStyle.blue, custom_id="back", emoji=":arrow_left:",
                                               disabled=False),
-                                create_button(style=ButtonStyle.blue, custom_id="forward", emoji=rightbuttonemoji,
+                                create_button(style=ButtonStyle.blue, custom_id="forward", emoji=":arrow_right:",
                                               disabled=True),
                                 create_button(style=ButtonStyle.blue, custom_id="big_forward", emoji="⏩",
                                               disabled=True),
@@ -196,9 +185,9 @@ class Help(commands.Cog):
                     buttons_all_disabled = [
                         create_button(style=ButtonStyle.blue, custom_id="big_back", emoji="⏪",
                                       disabled=True),
-                        create_button(style=ButtonStyle.blue, custom_id="back", emoji=leftbuttonemoji,
+                        create_button(style=ButtonStyle.blue, custom_id="back", emoji=":arrow_left:",
                                       disabled=True),
-                        create_button(style=ButtonStyle.blue, custom_id="forward", emoji=rightbuttonemoji,
+                        create_button(style=ButtonStyle.blue, custom_id="forward", emoji=":arrow_right:",
                                       disabled=True),
                         create_button(style=ButtonStyle.blue, custom_id="big_forward", emoji="⏩",
                                       disabled=True),
@@ -451,9 +440,9 @@ class Help(commands.Cog):
             buttons = [
                 create_button(style=ButtonStyle.blue, custom_id="big_back", emoji="⏪",
                               disabled=True),
-                create_button(style=ButtonStyle.blue, custom_id="back", emoji=leftbuttonemoji,
+                create_button(style=ButtonStyle.blue, custom_id="back", emoji=":arrow_left:",
                               disabled=True),
-                create_button(style=ButtonStyle.blue, custom_id="forward", emoji=rightbuttonemoji,
+                create_button(style=ButtonStyle.blue, custom_id="forward", emoji=":arrow_right:",
                               disabled=False),
                 create_button(style=ButtonStyle.blue, custom_id="big_forward", emoji="⏩",
                               disabled=False),
@@ -488,9 +477,9 @@ class Help(commands.Cog):
                             buttons_left_disabled = [
                                 create_button(style=ButtonStyle.blue, custom_id="big_back", emoji="⏪",
                                               disabled=True),
-                                create_button(style=ButtonStyle.blue, custom_id="back", emoji=leftbuttonemoji,
+                                create_button(style=ButtonStyle.blue, custom_id="back", emoji=":arrow_left:",
                                               disabled=True),
-                                create_button(style=ButtonStyle.blue, custom_id="forward", emoji=rightbuttonemoji,
+                                create_button(style=ButtonStyle.blue, custom_id="forward", emoji=":arrow_right:",
                                               disabled=False),
                                 create_button(style=ButtonStyle.blue, custom_id="big_forward", emoji="⏩",
                                               disabled=False),
@@ -504,9 +493,9 @@ class Help(commands.Cog):
                             buttons_normal = [
                                 create_button(style=ButtonStyle.blue, custom_id="big_back", emoji="⏪",
                                               disabled=False),
-                                create_button(style=ButtonStyle.blue, custom_id="back", emoji=leftbuttonemoji,
+                                create_button(style=ButtonStyle.blue, custom_id="back", emoji=":arrow_left:",
                                               disabled=False),
-                                create_button(style=ButtonStyle.blue, custom_id="forward", emoji=rightbuttonemoji,
+                                create_button(style=ButtonStyle.blue, custom_id="forward", emoji=":arrow_right:",
                                               disabled=False),
                                 create_button(style=ButtonStyle.blue, custom_id="big_forward", emoji="⏩",
                                               disabled=False),
@@ -522,9 +511,9 @@ class Help(commands.Cog):
                             buttons_right_disabled = [
                                 create_button(style=ButtonStyle.blue, custom_id="big_back", emoji="⏪",
                                               disabled=False),
-                                create_button(style=ButtonStyle.blue, custom_id="back", emoji=leftbuttonemoji,
+                                create_button(style=ButtonStyle.blue, custom_id="back", emoji=":arrow_left:",
                                               disabled=False),
-                                create_button(style=ButtonStyle.blue, custom_id="forward", emoji=rightbuttonemoji,
+                                create_button(style=ButtonStyle.blue, custom_id="forward", emoji=":arrow_right:",
                                               disabled=True),
                                 create_button(style=ButtonStyle.blue, custom_id="big_forward", emoji="⏩",
                                               disabled=True),
@@ -541,9 +530,9 @@ class Help(commands.Cog):
                     buttons_all_disabled = [
                         create_button(style=ButtonStyle.blue, custom_id="big_back", emoji="⏪",
                                       disabled=True),
-                        create_button(style=ButtonStyle.blue, custom_id="back", emoji=leftbuttonemoji,
+                        create_button(style=ButtonStyle.blue, custom_id="back", emoji=":arrow_left:",
                                       disabled=True),
-                        create_button(style=ButtonStyle.blue, custom_id="forward", emoji=rightbuttonemoji,
+                        create_button(style=ButtonStyle.blue, custom_id="forward", emoji=":arrow_right:",
                                       disabled=True),
                         create_button(style=ButtonStyle.blue, custom_id="big_forward", emoji="⏩",
                                       disabled=True),
