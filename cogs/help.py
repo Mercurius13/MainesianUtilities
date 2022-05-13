@@ -8,6 +8,7 @@ from discord_slash.utils.manage_components import create_button, create_actionro
 from discord_slash.utils.manage_components import wait_for_component
 from discord_slash.context import ComponentContext
 
+
 class Help(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
@@ -94,13 +95,13 @@ class Help(commands.Cog):
             help_3.color = nextcord.Color.random()
 
             buttons = [
-                create_button(style=ButtonStyle.blue, custom_id="big_back", emoji="⏪",
+                create_button(style=ButtonStyle.blue, custom_id="big_back", emoji=":rewind:",
                               disabled=True),
                 create_button(style=ButtonStyle.blue, custom_id="back", emoji=":arrow_backward:",
                               disabled=True),
                 create_button(style=ButtonStyle.blue, custom_id="forward", emoji=":arrow_right:",
                               disabled=False),
-                create_button(style=ButtonStyle.blue, custom_id="big_forward", emoji="⏩",
+                create_button(style=ButtonStyle.blue, custom_id="big_forward", emoji="fast_forward",
                               disabled=False),
             ]
             action_row = create_actionrow(*buttons)
@@ -131,13 +132,13 @@ class Help(commands.Cog):
                     if page == 1:
                         try:
                             buttons_left_disabled = [
-                                create_button(style=ButtonStyle.blue, custom_id="big_back", emoji="⏪",
+                                create_button(style=ButtonStyle.blue, custom_id="big_back", emoji=":rewind:",
                                               disabled=True),
                                 create_button(style=ButtonStyle.blue, custom_id="back", emoji=":arrow_left:",
                                               disabled=True),
                                 create_button(style=ButtonStyle.blue, custom_id="forward", emoji=":arrow_right:",
                                               disabled=False),
-                                create_button(style=ButtonStyle.blue, custom_id="big_forward", emoji="⏩",
+                                create_button(style=ButtonStyle.blue, custom_id="big_forward", emoji="fast_forward",
                                               disabled=False),
                             ]
                             action_row = create_actionrow(*buttons_left_disabled)
@@ -148,13 +149,13 @@ class Help(commands.Cog):
                     elif page == 2:
                         try:
                             buttons_normal = [
-                                create_button(style=ButtonStyle.blue, custom_id="big_back", emoji="⏪",
+                                create_button(style=ButtonStyle.blue, custom_id="big_back", emoji=":rewind:",
                                               disabled=False),
                                 create_button(style=ButtonStyle.blue, custom_id="back", emoji=":arrow_left:",
                                               disabled=False),
                                 create_button(style=ButtonStyle.blue, custom_id="forward", emoji=":arrow_right:",
                                               disabled=False),
-                                create_button(style=ButtonStyle.blue, custom_id="big_forward", emoji="⏩",
+                                create_button(style=ButtonStyle.blue, custom_id="big_forward", emoji="fast_forward",
                                               disabled=False),
                             ]
                             action_row2 = create_actionrow(*buttons_normal)
@@ -165,13 +166,13 @@ class Help(commands.Cog):
                     elif page == 3:
                         try:
                             buttons_right_disabled = [
-                                create_button(style=ButtonStyle.blue, custom_id="big_back", emoji="⏪",
+                                create_button(style=ButtonStyle.blue, custom_id="big_back", emoji=":rewind:",
                                               disabled=False),
                                 create_button(style=ButtonStyle.blue, custom_id="back", emoji=":arrow_left:",
                                               disabled=False),
                                 create_button(style=ButtonStyle.blue, custom_id="forward", emoji=":arrow_right:",
                                               disabled=True),
-                                create_button(style=ButtonStyle.blue, custom_id="big_forward", emoji="⏩",
+                                create_button(style=ButtonStyle.blue, custom_id="big_forward", emoji="fast_forward",
                                               disabled=True),
                             ]
                             action_row3 = create_actionrow(*buttons_right_disabled)
@@ -183,13 +184,13 @@ class Help(commands.Cog):
                     response: ComponentContext = await wait_for_component(self.bot, components=action_row,
                                                                           messages=message)
                     buttons_all_disabled = [
-                        create_button(style=ButtonStyle.blue, custom_id="big_back", emoji="⏪",
+                        create_button(style=ButtonStyle.blue, custom_id="big_back", emoji=":rewind:",
                                       disabled=True),
                         create_button(style=ButtonStyle.blue, custom_id="back", emoji=":arrow_left:",
                                       disabled=True),
                         create_button(style=ButtonStyle.blue, custom_id="forward", emoji=":arrow_right:",
                                       disabled=True),
-                        create_button(style=ButtonStyle.blue, custom_id="big_forward", emoji="⏩",
+                        create_button(style=ButtonStyle.blue, custom_id="big_forward", emoji="fast_forward",
                                       disabled=True),
                     ]
                     action_row = create_actionrow(*buttons_all_disabled)
@@ -438,17 +439,16 @@ class Help(commands.Cog):
             help_3.color = nextcord.Color.random()
 
             buttons = [
-                create_button(style=ButtonStyle.blue, custom_id="big_back", emoji="⏪",
+                create_button(style=ButtonStyle.blue, custom_id="big_back", emoji=":rewind:",
                               disabled=True),
                 create_button(style=ButtonStyle.blue, custom_id="back", emoji=":arrow_left:",
                               disabled=True),
                 create_button(style=ButtonStyle.blue, custom_id="forward", emoji=":arrow_right:",
                               disabled=False),
-                create_button(style=ButtonStyle.blue, custom_id="big_forward", emoji="⏩",
+                create_button(style=ButtonStyle.blue, custom_id="big_forward", emoji="fast_forward",
                               disabled=False),
             ]
             action_row = create_actionrow(*buttons)
-
             message = await ctx.send(embed=help_1, components=[action_row])
 
             while True:
@@ -475,13 +475,13 @@ class Help(commands.Cog):
                     if page == 1:
                         try:
                             buttons_left_disabled = [
-                                create_button(style=ButtonStyle.blue, custom_id="big_back", emoji="⏪",
+                                create_button(style=ButtonStyle.blue, custom_id="big_back", emoji=":rewind:",
                                               disabled=True),
                                 create_button(style=ButtonStyle.blue, custom_id="back", emoji=":arrow_left:",
                                               disabled=True),
                                 create_button(style=ButtonStyle.blue, custom_id="forward", emoji=":arrow_right:",
                                               disabled=False),
-                                create_button(style=ButtonStyle.blue, custom_id="big_forward", emoji="⏩",
+                                create_button(style=ButtonStyle.blue, custom_id="big_forward", emoji="fast_forward",
                                               disabled=False),
                             ]
                             action_row = create_actionrow(*buttons_left_disabled)
@@ -491,13 +491,13 @@ class Help(commands.Cog):
                     elif page == 2:
                         try:
                             buttons_normal = [
-                                create_button(style=ButtonStyle.blue, custom_id="big_back", emoji="⏪",
+                                create_button(style=ButtonStyle.blue, custom_id="big_back", emoji=":rewind:",
                                               disabled=False),
                                 create_button(style=ButtonStyle.blue, custom_id="back", emoji=":arrow_left:",
                                               disabled=False),
                                 create_button(style=ButtonStyle.blue, custom_id="forward", emoji=":arrow_right:",
                                               disabled=False),
-                                create_button(style=ButtonStyle.blue, custom_id="big_forward", emoji="⏩",
+                                create_button(style=ButtonStyle.blue, custom_id="big_forward", emoji="fast_forward",
                                               disabled=False),
                             ]
                             action_row2 = create_actionrow(*buttons_normal)
@@ -509,13 +509,13 @@ class Help(commands.Cog):
                     elif page == 3:
                         try:
                             buttons_right_disabled = [
-                                create_button(style=ButtonStyle.blue, custom_id="big_back", emoji="⏪",
+                                create_button(style=ButtonStyle.blue, custom_id="big_back", emoji=":rewind:",
                                               disabled=False),
                                 create_button(style=ButtonStyle.blue, custom_id="back", emoji=":arrow_left:",
                                               disabled=False),
                                 create_button(style=ButtonStyle.blue, custom_id="forward", emoji=":arrow_right:",
                                               disabled=True),
-                                create_button(style=ButtonStyle.blue, custom_id="big_forward", emoji="⏩",
+                                create_button(style=ButtonStyle.blue, custom_id="big_forward", emoji="fast_forward",
                                               disabled=True),
                             ]
                             action_row3 = create_actionrow(*buttons_right_disabled)
@@ -528,13 +528,13 @@ class Help(commands.Cog):
                     response: ComponentContext = await wait_for_component(self.bot, components=action_row,
                                                                           messages=message)
                     buttons_all_disabled = [
-                        create_button(style=ButtonStyle.blue, custom_id="big_back", emoji="⏪",
+                        create_button(style=ButtonStyle.blue, custom_id="big_back", emoji=":rewind:",
                                       disabled=True),
                         create_button(style=ButtonStyle.blue, custom_id="back", emoji=":arrow_left:",
                                       disabled=True),
                         create_button(style=ButtonStyle.blue, custom_id="forward", emoji=":arrow_right:",
                                       disabled=True),
-                        create_button(style=ButtonStyle.blue, custom_id="big_forward", emoji="⏩",
+                        create_button(style=ButtonStyle.blue, custom_id="big_forward", emoji="fast_forward",
                                       disabled=True),
                     ]
                     action_row = create_actionrow(*buttons_all_disabled)
